@@ -127,6 +127,7 @@ router.get ('/videogames', async (req,res)=>{
     }
     res.send('Se produjo un error en la búsqueda',e)
     })
+    
     router.get('/videogames/:id', async (req, res) => {
 
         const { id } = req.params;
@@ -167,32 +168,35 @@ router.get ('/videogames', async (req,res)=>{
             genre, 
         } = req.body
         try{ 
+            let genreDB = await Genre.findAll({ 
+                where: {name: genre}, 
+            })
+            if(genreDB.length !== genre.length){
+                return res.json({error: 'Genero no encontrado'})
+            }
+            
+            let id = uuidv4()
     
-                let id = uuidv4()
+            let videoGameCreate = await Videogame.create({ 
+                id: id,
+                name,
+                description,
+                releaseDate,
+                img,
+                rating,
+                platforms: [platforms],
+            
+            })
     
-                let videoGameCreate = await Videogame.create({ 
-                    id: id,
-                    name,
-                    description,
-                    releaseDate,
-                    img,
-                    rating,
-                    platforms: [platforms],
-                
-                })
-
-                let genreDB = await Genre.findAll({ 
-                    where: {name: genre}, 
-                })
-                videoGameCreate.addGenre(genreDB)
-                res.send('video juego creado')
-            // }
+            videoGameCreate.addGenre(genreDB)
+            res.send('Videojuego creado con éxito!')
+    
         }catch(error){
-            res.status(400).json({message: error?.message | 'El genero no existe'})
+            res.status(400).json({message: error})
         }
     })
 
-
+ 
     
 
     module.exports= router

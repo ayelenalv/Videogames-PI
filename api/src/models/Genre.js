@@ -5,7 +5,8 @@ module.exports = (sequelize) => {
     sequelize.define('genre', {
         name: {
         type: DataTypes.STRING,
-        
+        /* primaryKey: true, */
+        allowNull: false
         }
         
     });
