@@ -1,0 +1,52 @@
+.container{
+    /* margin-top: 4em; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* border-radius: 20px; */
+    background-color:rgb(109, 23, 131);
+    color:rgb(240, 147, 234);
+    background: #289bc8ed;
+    background: linear-gradient(0deg, rgb(15, 193, 238) 10%, rgb(240, 147, 234)  100%);
+}
+.inputOrder{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border: none;
+    outline: 0;
+    background-color: rgb(109, 23, 131);
+    color: rgb(106, 202, 202);
+}
+
+.select{
+    color: rgb(106, 202, 202);
+    margin: 1em 3em;
+    width: 8em;
+    /* background-color: rgba(135, 50, 231, 0.164); */
+    /* outline: none; */
+    border: none;
+    background-color: rgb(109, 23, 131);
+}
+
+.select option{
+    background-color:rgb(109, 23, 131)
+}
+
+.containers{
+    display: flex;
+    flex-direction: column;
+    height: 3.5em;
+    border-radius: 10px;
+    background-color: rgb(170, 239, 248);
+    /* background-color: #289bc817; */
+    /* color: rgb(106, 202, 202); */
+    border: solid 2px #c182eb;
+    transition: 500ms;
+    margin: 0em 00.5em;
+    color:rgb(109, 23, 131);
+    margin-bottom: 15px;
+    box-shadow: 0px 5px #8c40ca;
+}

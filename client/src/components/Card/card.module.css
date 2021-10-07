@@ -1,0 +1,107 @@
+.cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    overflow: hidden;
+    justify-content: center;
+}
+
+.NavLink{
+    text-decoration: none;
+    color: #7265e7;
+}
+.card{
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #7265e778;
+    text-decoration: none;
+    border-radius: 10px;
+    color: #7265e7;
+    box-shadow: 0px 5px #8c40ca;
+    transition: 500ms;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    margin-top:2em;
+    height: 300px;
+    width: 250px;
+    overflow: hidden;
+}
+ .card:hover{
+    background-color: rgb(170, 239, 248);
+    color: #7265e7;
+    transform: scale(1.05);
+    border: solid 2px #c182eb;
+    box-shadow: 0px 5px #c182eb;
+    /* box-shadow: rgb(170, 239, 248);   */
+ }
+ .card:active {
+    transform: scale(0.9);
+} 
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 20px;
+    height:35px;
+    padding-left:10px;
+    padding-right:10px;
+    color:rgb(109, 23, 131);
+}
+.image {
+    width: 200px;
+    height:150px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 2px #c182eb;
+    border-radius:20px;
+    
+}
+.ctnGenresCard {
+    /* width: 40%;
+    height: 40%; */
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: 0em;;
+    /* z-index: 10; */
+}
+
+.cardLow{
+    /* position: absolute; */
+    left: 0.75em;
+    background-color: rgba(52, 17, 54, 0.733);
+    /* width: 22em; */
+    /* height: 22em; */
+    transition: all 0.8s;
+    transform: translateY(60%); 
+    margin-left: 0em;
+    margin-right: 0em;
+    margin-top:0em;
+    height: 150px;
+    width: 250px;
+    color:#c182eb;
+
+}
+.card:hover .cardLow{
+    transform: translateY(-70%);
+    
+}
+.span{
+    margin: 0em 0.5em
+}
+/* .loading{
+    background-image: url('./assets/loading.gif');
+} */
+
+/* .h6 {
+    display:flex;
+    flex-wrap: wrap;
+    font-size: 14px;
+    padding: 0px 2px;
+} */

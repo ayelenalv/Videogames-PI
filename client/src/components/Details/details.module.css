@@ -1,0 +1,142 @@
+.detailBackground{
+    background: linear-gradient(0deg, rgb(240, 147, 234) 10%, rgb(109, 23, 131) 30%);;
+    /* background: radial-gradient(circle, rgba(240,240,240,1) 0%, 
+                                        rgba(245,245,245,1) 23%, 
+                                        rgba(245,245,245,1) 52%, 
+                                        rgba(238,238,238,1) 81%, 
+                                        rgba(246,246,246,1) 100%); */
+    background-size: cover;
+    width:100%;
+    height: 100%;
+    
+}
+.logoDetail{
+    position: absolute;
+    height:80px;
+    width:80px;
+    left: 100px;
+    top: 20px;
+    border-radius: 40px;
+}
+.navBarDetail{
+    background-size: cover;
+    display:flex;
+    width:100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+    background: linear-gradient(0deg, rgb(240, 147, 234) 10%, rgb(109, 23, 131) 30%);
+}
+.ctnDetail{
+    display:flex;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top:20px;
+    background-image: url('../../assets/detailBG.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(15px);
+    height: 100vh;
+    width: 100vw; 
+    flex-direction: center;
+
+}
+.backHome{
+    backdrop-filter: blur(5px);
+    width: 100px;
+    padding:8px;
+    position: absolute;
+    top: 40px;
+    right: 20px;
+    border-radius: 10px;
+    background-color: #289bc817;
+    color: rgb(106, 202, 202);
+    border: solid 2px #c182eb;
+    text-decoration: none;
+    text-align: center;
+    transition: 500ms;
+}
+.backHome:hover{
+    background-color: rgb(170, 239, 248);
+    color:#dba8eb;
+    transition: 500ms;
+}
+.backHome:active{
+    transform: scale(0.9);
+}
+
+.detailImg{
+    width: 40%;
+    height: 500px;
+    margin-right: 50px;
+    box-shadow:rgb(170, 239, 248);
+    border-radius: 40px;
+    border-style: 40px solid;
+    border: solid 2px #c182eb;
+    
+}
+.detailName{
+    color: rgb(170, 239, 248);
+    font-size: 40px;
+}
+.ctnGenre{
+    margin-right: 50px;
+    color: #dba8eb;
+}
+.titleGenre{
+    font-size: 25px;
+    color: rgb(170, 239, 248);
+    
+}
+.detailGenres{
+    font-size: 18px;
+    color: #dba8eb;
+}
+.ctnRating{
+    margin-right: 50px;
+    color: #dba8eb;
+}
+.titleRating{
+    font-size: 25px;
+    color: rgb(170, 239, 248);
+}
+.detailRating{
+    font-size: 18px;
+    color: #dba8eb;
+}
+.ctnRelease{
+    margin-right: 50px;
+    color: rgb(170, 239, 248);
+}
+.titleRelease{
+    font-size: 25px;
+    color: rgb(170, 239, 248);
+}
+.detailRelease{
+    font-size: 18px;
+    color: #dba8eb;
+}
+.titlePlatforms{
+    font-size: 25px;
+    color: rgb(170, 239, 248);
+}
+.detailPlatforms{
+    font-size: 18px;
+    color: #dba8eb;
+}
+.ctnDescription{
+    padding: 40px;
+    color: #dba8eb;
+}
+.titleDescription{
+    font-size: 25px;
+    color: rgb(170, 239, 248);
+}
+.detailDescription{
+    font-size: 18px;
+    color: #dba8eb;
+}
+.span{
+    margin: 0em 0.5em
+}

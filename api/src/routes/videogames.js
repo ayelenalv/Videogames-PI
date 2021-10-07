@@ -4,7 +4,7 @@ const { Router } = require('express');
 // Ejemplo: const authRouter = require('./auth.js');
 const { v4: uuidv4 } = require('uuid')
 const axios = require('axios');
-const {Videogame, Genre, videogame_genre} = require('../db');
+const {Videogame, Genre} = require('../db');
 const router = Router();
 const {YOUR_API_KEY} = process.env
 
@@ -29,7 +29,8 @@ const getApiInfo100= async () => {
     gamesPageTres = datos[2].data.results;
     gamesPageCuatro = datos[3].data.results;
     gamesPageCinco = datos[4].data.results;
-
+    
+    games = games.concat(gamesPageTwo).concat(gamesPageTres).concat(gamesPageCuatro).concat(gamesPageCinco)
 
     const apiInfo = await games.map(e =>{
         return{
@@ -76,7 +77,7 @@ const getDbInfo = async () => {
                 id: result.id,
                 name: result.name,
                 released: result.released,
-                image: result.background_image,
+                img: result.background_image,
                 rating: result.rating,
                 platforms: result.platforms.map(e => e.platform.name),
                 genres: result.genres.map(e => e.name),
@@ -101,10 +102,12 @@ const getDbInfo = async () => {
                 id: response.id,
                 name: response.name,
                 released: response.released,
-                image: response.background_image,
+                img: response.background_image,
                 rating: response.rating,
                 platforms: response.platforms.map(e => e.platform.name),
                 genres: response.genres.map(e => e.name),
+                description: response.description
+
             }
         }
 
@@ -123,9 +126,9 @@ router.get ('/videogames', async (req,res)=>{
             }
 
     } catch(e){
-
+        res.send('Se produjo un error en la búsqueda')
     }
-    res.send('Se produjo un error en la búsqueda',e)
+   
     })
     
     router.get('/videogames/:id', async (req, res) => {
