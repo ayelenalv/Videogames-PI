@@ -19,14 +19,14 @@ module.exports = (sequelize) => {
       allowNull: false
     },
     releaseDate: {
-      type: DataTypes.STRING
+      type: DataTypes.DATEONLY
     },
     rating: {
       type: DataTypes.FLOAT,
       defaultValue: 0,
       validate: {
         min:0,
-        max:10,
+        max:5,
       }
     },
     platforms:{

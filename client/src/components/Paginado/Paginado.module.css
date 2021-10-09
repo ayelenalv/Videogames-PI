@@ -1,0 +1,24 @@
+.btn{
+    background-color: transparent;
+    color: black;
+    border: 2px solid blue;
+    margin: 1em 0.25em 2em 0.25em;
+    height: 3em;
+    border-radius: 0.4em;
+    box-shadow: 7px 7px 15px black;
+    transition-property: all;
+    transition-duration: 0.5s;
+    transform: scale(1.0);
+}
+
+.btn:hover{
+    transition-property: all;
+    transition-duration: 0.5s;
+    background-color: rgb(77, 0, 77);
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.btn2{
+    background-color: purple;
+}

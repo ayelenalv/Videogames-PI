@@ -37,7 +37,7 @@ const getApiInfo100= async () => {
             id: e.id,
             name: e.name,
             img: e.background_image,
-            genres: e.genres.map(e =>e.name),
+            genres: e.genres.map(e =>e),
             rating: e.rating,
             platforms: e.platforms.map(e => e.platform.name),
             releaseDate: e.released
@@ -105,8 +105,8 @@ const getDbInfo = async () => {
                 img: response.background_image,
                 rating: response.rating,
                 platforms: response.platforms.map(e => e.platform.name),
-                genres: response.genres.map(e => e.name),
-                description: response.description
+                genres: response.genres.map(e => e),
+                description:response.description.replace(/<p>/g, "").replace(/<\/p>/g, "").replace(/<br \/>/g, "")
 
             }
         }
@@ -170,7 +170,7 @@ router.get ('/videogames', async (req,res)=>{
             platforms,
             genre, 
         } = req.body
-        try{ 
+       
             let genreDB = await Genre.findAll({ 
                 where: {name: genre}, 
             })
@@ -194,9 +194,7 @@ router.get ('/videogames', async (req,res)=>{
             videoGameCreate.addGenre(genreDB)
             res.send('Videojuego creado con éxito!')
     
-        }catch(error){
-            res.status(400).json({message: error})
-        }
+
     })
 
  

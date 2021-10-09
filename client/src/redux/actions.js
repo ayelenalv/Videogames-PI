@@ -9,6 +9,7 @@ export const obtenerGeneros = "OBTENER_LOS_GENEROS_DE_LA_BASE_DE_DATOS";
 export const gameByGenre = "OBTENER_JUEGOS_SOLO_POR_EN_GENERO";
 export const gameByRating = "OBTENER_LOS_JUEGOS_POR_RATING";
 export const alphabeticalOrder = "OBTENER_LOS_JUEGOS_EN_ORDEN_ALFABETICOS";
+export const postSubmit = "CREAR_JUEGOS"
 
 export function searchGames(){
     return async function(dispatch){
@@ -46,12 +47,13 @@ export function gameById(id){
     }
 }
 
-export function gamesDatabase(){
+export function gamesDatabase(arg){
     return async function(dispatch){
-        let database = await axios.get('/videogames/database')
+        let database = await axios.get('/database')
         return dispatch({
             type: dataBase,
-            payload: database.data
+            payload: database.data,
+            arg: arg
         })
     }
 }
@@ -106,5 +108,15 @@ export function ordenAlfabetico(descAsc){
             payload: games.data,
             descAsc: descAsc
         })
+    }
+}
+export function submitPost(datos){
+    return async function(){
+        let postgame = await axios.post('http://localhost:3001/videogames', datos)
+        console.log(postgame.data)
+        return {
+            type: postSubmit,
+            postgame: postgame.data
+        }
     }
 }

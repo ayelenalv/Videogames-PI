@@ -14,23 +14,13 @@ function Details({videogame}){
                         <img className={s.detailImg} src={e.img} alt='Imagen dañada'/>
                         <p>Rating:  {e.rating}</p>
                         <p>Lanzamiento:  {e.released}</p>
-                        <p className={s.titleGenre}>Genres: {e.genres.map(e=><span className={s.span}>{e}</span>)}</p>
-                        <p >Plataformas:  {e.platforms}</p>
+                        <p className={s.titleGenre}>Genres: {e.genres.map(e=><span className={s.span}>{e.name}</span>)}</p>
                         <p>Description:  {e.description}</p>
                        
                     </div>
                 </div>)
             }
             
-            {/* <div className={s.fondos}>
-                <div className={s.degradado}></div>
-                <div className={s.containerImg}>
-                    {
-                        videogame && videogame.map((e, i) => <><img src={e.image} alt="videogames image" className={s.img}/></>)
-                    }
-                </div>
-                <div className={s.cortador}></div>
-            </div> */}
         </div>
     )
 }

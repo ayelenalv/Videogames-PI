@@ -1,13 +1,14 @@
 import React, {useRef} from "react";
 import {connect} from 'react-redux'
 import s from './order.module.css'
-import {ordenAlfabetico, buscarPorGenero, buscarPorRating} from '../../redux/actions'
+import {ordenAlfabetico, buscarPorGenero, buscarPorRating, gamesDatabase} from '../../redux/actions'
 
-function Order({ordenAlfabetico, buscarPorGenero, buscarPorRating }){
+function Order({ordenAlfabetico, buscarPorGenero, buscarPorRating, gamesDatabase }){
 
     let miRef = useRef(null);
     let GenRef = useRef(null);
     let RatRef = useRef(null);
+    let refDataBase = useRef(null);
 
     function cambiarEstado(){
         ordenAlfabetico(miRef.current.value)
@@ -19,18 +20,13 @@ function Order({ordenAlfabetico, buscarPorGenero, buscarPorRating }){
     function OrderRating(){
         buscarPorRating(RatRef.current.value)
     }
+    function OrderByDataBase(){
+        gamesDatabase(refDataBase.current.value)
+    }
 
 
     return (
         <div className={s.container}>
-            <div className={s.containers}>
-                <label>Filter Origin</label>
-                <select className={s.select}>
-                    <option className={s.inputOrder} selected>All</option>
-                    <option value="creados">Created</option>
-                    <option value="api">Api</option>
-                </select>
-            </div>
             <div className={s.containers}>
                 <label>Alphabetical Order</label>
                 <select className={s.select} ref={miRef} onChange={cambiarEstado}>
@@ -71,8 +67,16 @@ function Order({ordenAlfabetico, buscarPorGenero, buscarPorRating }){
                     <option value="Desc">Desc</option>
                 </select>
             </div>
+            <div className={s.containers}>
+                <label>Filter dataBase</label>
+                <select className={s.select} ref={refDataBase} onChange={OrderByDataBase}>
+                    <option selected >Default</option>
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
         </div>
     )
 }
 
-export default connect (null, {ordenAlfabetico, buscarPorGenero, buscarPorRating})(Order)
+export default connect (null, {ordenAlfabetico, buscarPorGenero, buscarPorRating, gamesDatabase})(Order)

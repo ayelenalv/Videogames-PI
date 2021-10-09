@@ -25,18 +25,18 @@ const reducer = (state=initialStore, action) => {
 
         case buscar: return {
             ...state,
-            videoGames: action.payload
+            videoGames: action.payload,
             /* .filter((e, i) => {
                 if(i <= 15){
                     return e
                 }
-            }), */,
-            // fullGames: action.payload
+            }), */
+            fullGames: action.payload
         }
 
         case buscarPorNombre: return {
             ...state,
-            name: action.payload
+            videoGames: action.payload
         }
 
         case buscarNombrePorId: return {
@@ -46,7 +46,7 @@ const reducer = (state=initialStore, action) => {
 
         case dataBase: return {
             ...state,
-            database: action.payload
+            videoGames: action.arg == 'Yes' ? action.payload : state.fullGames
         }
 
         case obtenerGeneros: return {
@@ -60,7 +60,7 @@ const reducer = (state=initialStore, action) => {
           videoGames: action.payload.filter((e) => {
 
               for(let i = 0; i < e.genres.length; i++){
-                  if(e.genres[i] === action.name){
+                  if(e.genres[i].name === action.name){
                       return e
                   }
               }
