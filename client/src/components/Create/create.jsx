@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-// import { NavLink } from "react-router-dom";
 import s from './create.module.css';
 import { connect } from "react-redux";
 import {submitPost} from "../../redux/actions";
@@ -37,17 +36,11 @@ function Create({submitPost}){
     function handleGenres(e){
         setState({
             ...state,
-            // genre: [e.target.value]
             genre: state.genre.includes(e.target.value) ? state.genre.filter(el => el !== e.target.value) : state.genre.concat(e.target.value)
         })
-        // console.log(state)
+    
     }
 
-    // async function handleSubmit(e){
-    //     e.preventDefault()
-    //     submitPost(state)
-    //     await console.log(state)
-    // }
     function handlePlatforms(e){
         setState({
             ...state,
@@ -80,7 +73,7 @@ function Create({submitPost}){
         if(state.platforms == ''){
             return alert("Add platforms" + " " + "(Falta agregar plataformas)")
         }
-        // const game = state
+       
         await submitPost(state)
         myHistory.push("/app/home")
         alert("juego creado")
@@ -88,20 +81,20 @@ function Create({submitPost}){
 
     return (
         <div className={s.containerFather}>
-            {/* <button className={s.btnVolver}><NavLink to='/app/home'>Volver</NavLink></button> */}
+            
             <form onSubmit={(e)=>handleSubmit(e)}>
                 
                 <div className={s.container}>
 
-                    <h3 className={s.titulo}>Create new Videogame</h3>
+                    <h3 className={s.title}>Add New Videogame</h3>
 
                     <div className={s.name}>
-                        <label>Name of the game: </label>
+                        <label>Name: </label>
                         <input type="text" name="name" className={s.input} onChange={(e)=>handleChange(e)} />
                     </div>
 
                     <div className={s.released}>
-                        <label>Release: </label>
+                        <label>Release Date: </label>
                         <input type="date" name="releaseDate" className={s.input} onChange={(e)=>handleChange(e)} />
                     </div>
 
@@ -166,11 +159,11 @@ function Create({submitPost}){
                         </div>
                     </div>
 
-                    {/* <div className={s.info}></div> */}
+                  
 
                 </div>
-                <button  type='submit' className={s.button}>Create Game</button>
-                {/* <NavLink className={s.NavLink} to='/app/home'>Back</NavLink> */}
+                <button  type='submit' className={s.button}>Submit</button>
+                
 
             </form>
         </div>

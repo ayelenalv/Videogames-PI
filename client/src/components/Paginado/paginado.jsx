@@ -54,7 +54,7 @@ export default function Paginado ({gamesPerPage,allVideoGames,paginado, currentP
                     pageNumbers && pageNumbers.map((e, i) => i==currentPage || i+1==currentPage || i+2==currentPage?<button onClick={()=>{
                         paginado(e+1);  scrollUp()
                         }} 
-                        className={s.btn}>pagina {e+1}</button>: <button className={s.btn} onClick={()=>handleClick(i)}>{unoUOtro(i)}</button>)
+                        className={s.btn}> {e+1}</button>: <button className={s.btn} onClick={()=>handleClick(i)}>{unoUOtro(i)}</button>)
                 }
             
         </nav>

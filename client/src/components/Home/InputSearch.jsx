@@ -1,7 +1,7 @@
 import React,{useState, useRef,} from "react";
 import {useDispatch} from 'react-redux';
 import {searchByName} from '../../redux/actions'
-import s from './nav.module.css';
+import s from './home.module.css';
 
 export default function InputSearch(){
 
@@ -12,16 +12,16 @@ export default function InputSearch(){
     
     function handleClick(){
         dispatch(searchByName(state));
+       
     }
 
     function buscar(){
-        console.log(state)
         setState(miRef.current.value)
         
     }
 
     return (
-        <div>
+        <div className={s.searchBox}>
             <input className={s.inputSearch} type ="text" placeholder= "Search..." ref= {miRef} onChange={()=>buscar()}/>
             <button className={s.buttonSearch} onClick={handleClick}>Search</button>
         </div>

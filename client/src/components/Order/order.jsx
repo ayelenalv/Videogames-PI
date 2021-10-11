@@ -28,17 +28,17 @@ function Order({ordenAlfabetico, buscarPorGenero, buscarPorRating, gamesDatabase
     return (
         <div className={s.container}>
             <div className={s.containers}>
-                <label>Alphabetical Order</label>
+               
                 <select className={s.select} ref={miRef} onChange={cambiarEstado}>
-                    <option selected>All</option>
+                    <option selected>By Name</option>
                     <option value="A - Z">A - Z</option>
                     <option value="Z - A">Z - A</option>
                 </select>
             </div>
             <div className={s.containers}>
-                <label>Filter Genres</label>
+              
                 <select className={s.select} ref={GenRef} onChange={OrderGenres}>
-                <option selected>All</option>
+                <option selected>Genres</option>
                     <option value="Action">Action</option>
                     <option value="Adventure">Adventure</option>
                     <option value="RPG">RPG</option>
@@ -60,19 +60,19 @@ function Order({ordenAlfabetico, buscarPorGenero, buscarPorRating, gamesDatabase
                 </select>
             </div>
             <div className={s.containers}>
-                <label>Filter Rating</label>
+               
                 <select className={s.select} ref={RatRef} onChange={OrderRating}>
-                    <option selected >Default</option>
-                    <option value="Asc">Asc</option>
-                    <option value="Desc">Desc</option>
+                    <option selected >Rating</option>
+                    <option value="Asc">Worst Rated</option>
+                    <option value="Desc">Best Rated</option>
                 </select>
             </div>
             <div className={s.containers}>
-                <label>Filter dataBase</label>
+              
                 <select className={s.select} ref={refDataBase} onChange={OrderByDataBase}>
-                    <option selected >Default</option>
-                    <option>Yes</option>
-                    <option>No</option>
+                    <option selected >Origin</option>
+                    <option>My Videogames</option>
+                    <option>Web Videogames</option>
                 </select>
             </div>
         </div>

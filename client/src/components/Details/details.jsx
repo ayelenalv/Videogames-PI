@@ -9,14 +9,16 @@ function Details({videogame}){
             {
                 videogame && videogame.map(e => 
                 <div key={e.id}>
-                    <div className={s.texts}>
-                        <h1>{e.name}</h1>
-                        <img className={s.detailImg} src={e.img} alt='Imagen dañada'/>
-                        <p>Rating:  {e.rating}</p>
-                        <p>Lanzamiento:  {e.released}</p>
-                        <p className={s.titleGenre}>Genres: {e.genres.map(e=><span className={s.span}>{e.name}</span>)}</p>
-                        <p>Description:  {e.description}</p>
-                       
+
+                    <div>
+                        <h1 className={s.detailTitle}>{e.name}</h1>     
+                        <p className={s.detailRating}>Rating: {e.rating}</p>
+                        <p>Released Date {e.released}</p>
+                        <p className={s.detailGenres}> {e.genres.map(e=><span className={s.span}><strong>{e.name}</strong></span>)}</p>
+                        <p className={s.detailDescription}>{e.description}</p>                  
+                    </div>
+                    <div>
+                    <img className={s.detailImg} src={e.img} alt='Imagen dañada'/>
                     </div>
                 </div>)
             }

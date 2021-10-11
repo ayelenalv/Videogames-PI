@@ -26,11 +26,6 @@ const reducer = (state=initialStore, action) => {
         case buscar: return {
             ...state,
             videoGames: action.payload,
-            /* .filter((e, i) => {
-                if(i <= 15){
-                    return e
-                }
-            }), */
             fullGames: action.payload
         }
 

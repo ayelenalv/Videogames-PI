@@ -1,83 +1,71 @@
-/* .button {
-    position: fixed;
-    top: 250px;
-    height: 32px;
-    width: 150px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 11px;
-    font-weight: bold;
-    border: 2px solid #7821bf;
-    color: rgb(180, 52, 231);
-    background: rgb(233, 142, 213);
-    border-radius: 12px;
-    cursor: pointer;
-  }
-  
-  .button:hover {
-    background: #76c3f0;
-  } */
-
+@import url("https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css");
+.landing {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw; 
+  background-image: url('../../assets/landing.jpeg');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
   .welcome{
-    font-family: 'Press Start 2P', cursive;
-    position: static;
+    font-family: 'Poppins', sans-serif;
     display: flex;
     height: 100px;
     background-clip: border-box;
- /*    background: rgb(99, 19, 173);
-    background: linear-gradient(0deg, rgb(240, 147, 234) 10%, rgb(109, 23, 131) 30%); */
-    align-items: center;
-    justify-content: center;
+    align-items: center; 
+    justify-content: center; 
+    font-size: 90px;
+    margin-bottom: 220px;
+    color:#333
+
 
   }
-.landing {
-    font-family: 'Press Start 2P', cursive;
-    /* backdrop-filter: blur(1px); */
-    flex-direction: center;
-    position: absolute;
-    height: 100vh;
-    width: 100vw; 
-    color: rgb(106, 202, 202);
-    background-image: url('../../assets/landing.jpeg');
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-.button {
-    font-family: 'Press Start 2P', cursive;
-    position: static;
-    display: flex;
-    height: 70px;
-    background-clip: border-box;
-    background-color: rgb(170, 239, 248);
-    color:#dba8eb;
-    /* background: linear-gradient(0deg, rgb(15, 193, 238) 10%, rgb(240, 147, 234)  100%); */
-    /* background-color: #289bc817; */
-    color: rgb(106, 202, 202);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    align-items: center;
-    justify-content: center;
-    margin-left: 40%;
-    margin-right: 40%;
-    margin-top: 10%;
-    padding: 50px;
-    font-size: 80px ;
-    transition: 500ms;
-}
-.button:hover {
-    transform:scale(1.1);
-    background-clip: border-box;
-    background: rgb(99, 19, 173);
-    background: linear-gradient(0deg, rgb(240, 147, 234) 10%, rgb(109, 23, 131) 30%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-.button:active{
-    transform: scale(0.9);
-}
-
+  
+  .button{
+  align-items: center; 
+   background-color: #fee6e3;
+   border: 2px solid #111;
+   border-radius: 8px;
+   box-sizing: border-box;
+   color: #333;
+   cursor: pointer;
+   font-family:'Poppins', sans-serif;
+   font-size: 40px;
+   height: 150px;
+   width: 300px;
+   justify-content: center;
+   line-height: 24px;
+   padding: 0 25px;
+   position: relative;
+   text-align: center;
+   text-decoration: none;
+   user-select: none;
+   -webkit-user-select: none;
+   touch-action: manipulation;
+   margin-bottom: 180px;
+ }
+ 
+ .button:hover:after {
+   transform: translate(0, 0);
+ }
+ 
+ .button:active {
+   background-color: #ffdeda;
+   outline: 0;
+ }
+ 
+ .button:hover {
+   outline: 0;
+ }
+ 
+ 
 .NavLink{
   text-decoration: none;
 }
+
+

@@ -1,5 +1,4 @@
 
-
 import React, {useEffect,useState} from 'react';
 import { useDispatch, useSelector} from 'react-redux';
 import {connect} from 'react-redux'
@@ -7,6 +6,7 @@ import {searchGames,gameById} from '../../redux/actions';
 import s from './card.module.css'
 import {NavLink} from 'react-router-dom';
 import Paginado from '../Paginado/paginado'
+import loading from '../../assets/loading.gif'
 
 
 
@@ -29,13 +29,7 @@ function Card({searchGames, videogames, name, gameById}){
         console.log(videogames)
     },[])
 
-    // function game(){
-    //     if(name.length > 0) return name;
-    //     else return videogames
-    // }
 
-    // console.log(videogames)
-    
     return(
         <div>
 
@@ -43,19 +37,26 @@ function Card({searchGames, videogames, name, gameById}){
 
             { 
 
-                // videogames.length ? videogames.map(e =>
             
-            videogames.length ? videogames.map(e=> <div className={s.card} onClick={()=>gameById(e.id)}>
-               <NavLink className={s.NavLink} to={`/app/${e.id}`}>
-               <p className={s.title}>{e.name}</p>
+            videogames.length? videogames?.map(e=> <div className={s.card} onClick={()=>gameById(e.id)}>
+                
+               <div className={s.container}>  
+               <div >
                <img className={s.image} src={e.img} alt='Imagen de videogames'/>
-               <p className={s.ctnGenresCard}>Release: {e.releaseDate}</p>  
-                 <div className={s.cardLow}>
-                    <p className={s.ctnGenresCard}> Genres: {e.genres.map(e=><span className={s.span}>{e.name}</span>)}</p>   
-                    <p className={s.ctnGenresCard}> Rating: {e.rating}</p>
-                    </div></NavLink>
-               </div>) : <h1>Cargando...</h1>
-                // ):<img src={loading} alt='Gif Cargando'/>
+               </div>    
+               <div className = "s.cardDetails">
+                    <p className={s.cardReleased}> <strong>{e.releaseDate}</strong></p>  
+                    <p className={s.cardTitle}>{e.name}</p>
+                    <p className={s.cardDetails}>{e.genres.map((e,i)=>{if(i < 3)return <span className={s.span} >{e.name}</span>})}</p>   
+                    <p className={s.cardRating}> Rating: {e.rating}</p>
+                    </div>
+                    <NavLink className={s.NavLink} to={`/app/${e.id}`}> 
+                    <div><p className={s.cardMore}><strong>Find out more</strong></p></div>
+                    </NavLink>
+                    </div>    
+               </div>) : <div className={s.contLoading}>
+                <img src={loading} alt='loading gif' className={s.loading}/>
+                </div>
 
             } 
 

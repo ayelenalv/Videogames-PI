@@ -6,7 +6,7 @@ function LandingPage() {
     return (
         <div className={s.cover}>
             <div className={s.landing}>
-                <h1 className={s.welcome}> Bienvenidos!!! </h1>
+                <h1 className={s.welcome}> Welcome </h1>
                 <NavLink className={s.NavLink}  to='/app/home'>
                     <button className={s.button}>Home</button>
                 </NavLink>

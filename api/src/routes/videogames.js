@@ -80,7 +80,7 @@ const getDbInfo = async () => {
                 img: result.background_image,
                 rating: result.rating,
                 platforms: result.platforms.map(e => e.platform.name),
-                genres: result.genres.map(e => e.name),
+                genres: result.genres.map(e => e),
             }        
         })
 
@@ -170,30 +170,41 @@ router.get ('/videogames', async (req,res)=>{
             platforms,
             genre, 
         } = req.body
-       
-            let genreDB = await Genre.findAll({ 
-                where: {name: genre}, 
-            })
-            if(genreDB.length !== genre.length){
-                return res.json({error: 'Genero no encontrado'})
+
+        try{
+            if(name && description && rating && genre){
+  
+                let genreDB = await Genre.findAll({ 
+                    where: {name: genre}, 
+                })
+                if(genreDB.length !== genre.length){
+                    return res.json({error: 'Genero no encontrado'})
+                }
+                
+                let id = uuidv4()
+      
+                let newName = name[0].toUpperCase()+name.slice(1)
+        
+                let videoGameCreate = await Videogame.create({ 
+                    id: id,
+                    name:newName,
+                    description,
+                    releaseDate,
+                    img,
+                    rating,
+                    platforms: [platforms],
+                
+                })
+        
+                videoGameCreate.addGenre(genreDB)
+                res.send('Videojuego creado con éxito!')
+        
             }
-            
-            let id = uuidv4()
-    
-            let videoGameCreate = await Videogame.create({ 
-                id: id,
-                name,
-                description,
-                releaseDate,
-                img,
-                rating,
-                platforms: [platforms],
-            
-            })
-    
-            videoGameCreate.addGenre(genreDB)
-            res.send('Videojuego creado con éxito!')
-    
+      
+        }catch(e){
+            res.status(400).json('error')
+        }
+        
 
     })
 

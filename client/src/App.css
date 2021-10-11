@@ -1,18 +1,19 @@
+
+
+p{font-family: 'Poppins', sans-serif;}
+span{font-family: 'Poppins', sans-serif;}
+h1{font-family: 'Poppins', sans-serif;}
+a{font-family: 'Poppins', sans-serif;}
+
 .App {
   
-    /* color:#5adbe4; */
+
     text-align: center;
     justify-content: center;
     word-spacing: normal;
-    background: url('https://wallpapercave.com/wp/wp7620823.jpg') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-      /* background-size: cover;  */
-    /* background-repeat: no-repeat; */
-    /* background-size: cover; */
-  
+    background-color: white;
+
+   
 
 }
 
