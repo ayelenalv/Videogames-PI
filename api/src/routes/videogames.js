@@ -58,7 +58,7 @@ const getDbInfo = async () => {
                 attributes:[]
             }
         }
-    })
+    }) //concatena tabla de Videogames creados con sus generos
 }
 
 
@@ -106,7 +106,7 @@ const getDbInfo = async () => {
                 rating: response.rating,
                 platforms: response.platforms.map(e => e.platform.name),
                 genres: response.genres.map(e => e),
-                description:response.description.replace(/<p>/g, "").replace(/<\/p>/g, "").replace(/<br \/>/g, "")
+                description: response.description.replace(/<p>/g, "").replace(/<\/p>/g, "").replace(/<br \/>/g, "").replace(/<\/h3>/g, "").replace(/<h3>/g, ""),
 
             }
         }
@@ -172,7 +172,7 @@ router.get ('/videogames', async (req,res)=>{
         } = req.body
 
         try{
-            if(name && description && rating && genre){
+            if(name && description && platforms && genre){
   
                 let genreDB = await Genre.findAll({ 
                     where: {name: genre}, 

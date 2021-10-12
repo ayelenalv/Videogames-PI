@@ -14,18 +14,31 @@ function App() {
   <React.Fragment>
     <BrowserRouter>
       <div className="App">
-      <Route path= '/app/' component={Nav}/> 
-        {/* <Switch> */}
+      {/* <Route path= '/app/' component={Nav}/> */}
+
+        <Switch>
+
+        <Route exact path= '/'>
+          <LandingPage/>
+        </Route>
+        
         <Route exact path= '/app/home'>
+          <Nav />
           <Home />
           <Card />
         </Route>
-          <Route exact path= '/' component={LandingPage}/>
-          <Route path='/app/create' component={Create}/>
-          <Route path='/app/:id' component={Detail}/>
 
+        <Route exact path='/app/create'>
+          <Create />
+        </Route>
 
-        {/* </Switch> */}
+        <Route exact path='/app/:id'>
+          <Nav />
+          <Detail />
+        </Route>
+
+        </Switch>
+
       </div>
     </BrowserRouter>
   </React.Fragment>

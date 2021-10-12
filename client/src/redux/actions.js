@@ -113,7 +113,6 @@ export function ordenAlfabetico(descAsc){
 export function submitPost(datos){
     return async function(){
         let postgame = await axios.post('http://localhost:3001/videogames', datos)
-        console.log(postgame.data)
         return {
             type: postSubmit,
             postgame: postgame.data

@@ -10,9 +10,9 @@ import loading from '../../assets/loading.gif'
 
 
 
-function Card({searchGames, videogames, name, gameById}){
-    const dispatch = useDispatch();
-    const allVideoGames = useSelector((state) => state.videoGames)
+function Card({searchGames, videogames, gameById}){
+;
+    const allVideoGames = videogames
 
     const [currentPage,setCurrentPage] = useState(1)
     const [gamesPerPage, setGamesPerPage] = useState(15) 
@@ -26,7 +26,6 @@ function Card({searchGames, videogames, name, gameById}){
 
     useEffect(() => {
         searchGames()
-        console.log(videogames)
     },[])
 
 
@@ -36,9 +35,7 @@ function Card({searchGames, videogames, name, gameById}){
       <div className={s.cards}>
 
             { 
-
-            
-            videogames.length? videogames?.map(e=> <div className={s.card} onClick={()=>gameById(e.id)}>
+            videogames.length? videogames.map(e=> <div className={s.card} onClick={()=>gameById(e.id)}>
                 
                <div className={s.container}>  
                <div >

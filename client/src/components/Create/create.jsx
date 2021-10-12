@@ -33,12 +33,12 @@ function Create({submitPost}){
             rating: parseInt(e.target.value)
         })
     }
+
     function handleGenres(e){
         setState({
             ...state,
             genre: state.genre.includes(e.target.value) ? state.genre.filter(el => el !== e.target.value) : state.genre.concat(e.target.value)
         })
-    
     }
 
     function handlePlatforms(e){

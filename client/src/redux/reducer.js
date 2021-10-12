@@ -41,7 +41,7 @@ const reducer = (state=initialStore, action) => {
 
         case dataBase: return {
             ...state,
-            videoGames: action.arg == 'Yes' ? action.payload : state.fullGames
+            videoGames: action.arg == 'My Videogames' ? action.payload : state.fullGames
         }
 
         case obtenerGeneros: return {

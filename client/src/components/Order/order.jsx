@@ -24,7 +24,6 @@ function Order({ordenAlfabetico, buscarPorGenero, buscarPorRating, gamesDatabase
         gamesDatabase(refDataBase.current.value)
     }
 
-
     return (
         <div className={s.container}>
             <div className={s.containers}>
