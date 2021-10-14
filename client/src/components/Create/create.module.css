@@ -142,3 +142,13 @@
 .descripcion textarea{
     max-width: none;
 }
+
+.back{
+    position: absolute;
+    height:60px;
+    width:60px;
+    left: 150px;
+    top: 17px;
+    border-radius: 30px;
+    border: solid 3px #aaa1c8;
+}

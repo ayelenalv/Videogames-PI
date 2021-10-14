@@ -10,14 +10,8 @@ import { buscar,
 const initialStore = {
     fullGames: [],
     videoGames: [],
-    name: [],
     id: [],
-    database: [],
     genres: [],
-    platforms: [],
-    gamesFilterByGenre: [],
-    gamesFilterByRating: [],
-    order: [],
 }
 
 const reducer = (state=initialStore, action) => {
@@ -29,10 +23,11 @@ const reducer = (state=initialStore, action) => {
             fullGames: action.payload
         }
 
-        case buscarPorNombre: return {
-            ...state,
-            videoGames: action.payload
-        }
+
+      case buscarPorNombre: return {
+        ...state,
+        videoGames: action.payload == null ? state.fullGames : action.payload
+    }
 
         case buscarNombrePorId: return {
             ...state,

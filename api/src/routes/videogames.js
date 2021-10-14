@@ -58,14 +58,14 @@ const getDbInfo = async () => {
                 attributes:[]
             }
         }
-    }) //concatena tabla de Videogames creados con sus generos
+    }) 
 }
 
 
     const getAllGames = async () =>{
      const apiInfo100 = await getApiInfo100()
      const dbInfo =  await getDbInfo()
-     const infoTotal = apiInfo100.concat(dbInfo)
+     const infoTotal = dbInfo.concat(apiInfo100)
      return infoTotal
     }
 
@@ -208,6 +208,19 @@ router.get ('/videogames', async (req,res)=>{
 
     })
 
+    router.delete('/videogames/:id', async (req,res)=>{
+        const {id} =req.params;
+        
+        if(!Number(id)){
+   
+           await Videogame.destroy({
+               where: {id: id}
+           })
+   
+           res.json("el juego fue destruido")
+       }
+       res.status(404).json({message: "id no encontrado"})
+   })
  
     
 

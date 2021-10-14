@@ -29,7 +29,7 @@ function Order({ordenAlfabetico, buscarPorGenero, buscarPorRating, gamesDatabase
             <div className={s.containers}>
                
                 <select className={s.select} ref={miRef} onChange={cambiarEstado}>
-                    <option selected>By Name</option>
+                    <option value="byName">By Name</option>
                     <option value="A - Z">A - Z</option>
                     <option value="Z - A">Z - A</option>
                 </select>
@@ -37,7 +37,7 @@ function Order({ordenAlfabetico, buscarPorGenero, buscarPorRating, gamesDatabase
             <div className={s.containers}>
               
                 <select className={s.select} ref={GenRef} onChange={OrderGenres}>
-                <option selected>Genres</option>
+                <option value="genres">Genres</option>
                     <option value="Action">Action</option>
                     <option value="Adventure">Adventure</option>
                     <option value="RPG">RPG</option>
@@ -61,7 +61,7 @@ function Order({ordenAlfabetico, buscarPorGenero, buscarPorRating, gamesDatabase
             <div className={s.containers}>
                
                 <select className={s.select} ref={RatRef} onChange={OrderRating}>
-                    <option selected >Rating</option>
+                    <option value="rating" >Rating</option>
                     <option value="Asc">Worst Rated</option>
                     <option value="Desc">Best Rated</option>
                 </select>
@@ -69,9 +69,9 @@ function Order({ordenAlfabetico, buscarPorGenero, buscarPorRating, gamesDatabase
             <div className={s.containers}>
               
                 <select className={s.select} ref={refDataBase} onChange={OrderByDataBase}>
-                    <option selected >Origin</option>
-                    <option>My Videogames</option>
-                    <option>Web Videogames</option>
+                    <option value="origin" >Origin</option>
+                    <option value="created">My Videogames</option>
+                    <option value="api">Web Videogames</option>
                 </select>
             </div>
         </div>

@@ -34,7 +34,7 @@ export default function Paginado ({gamesPerPage,allVideoGames,paginado, currentP
     }
 
     function unoUOtro(i){
-        if(i == allVideoGames) return "-->";
+        if(i == pageNumbers.length-1) return "-->";
         if(i+1 == 1) return "<--";
 
         return "..."
@@ -43,19 +43,12 @@ export default function Paginado ({gamesPerPage,allVideoGames,paginado, currentP
     return (
         <nav>
             
-                {
-                    // pageNumbers &&
-                    // pageNumbers.map(number => 
-                        
-                    //     <button onClick={()=>{paginado(number+1);  scrollUp()}}>{number+1} </button>
-                        
-                    // )
-
-                    pageNumbers && pageNumbers.map((e, i) => i==currentPage || i+1==currentPage || i+2==currentPage?<button onClick={()=>{
-                        paginado(e+1);  scrollUp()
-                        }} 
-                        className={s.btn}> {e+1}</button>: <button className={s.btn} onClick={()=>handleClick(i)}>{unoUOtro(i)}</button>)
-                }
+         {
+        pageNumbers && pageNumbers.map((e, i) => i==currentPage || i+1==currentPage || i+2==currentPage?<button key={i} onClick={()=>{
+        paginado(e+1);  scrollUp()
+             }} 
+        className={s.btn}> {e+1}</button> : <button key={i} className={s.btn} onClick={()=>handleClick(i)}>{unoUOtro(i)}</button>)
+            }
             
         </nav>
     )

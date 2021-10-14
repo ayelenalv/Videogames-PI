@@ -58,25 +58,7 @@ export function gamesDatabase(arg){
     }
 }
 
-export function getGenres(){
-    return async function(dispatch){
-        let genres = await axios.get('/genres')
-        return dispatch({
-            type: obtenerGeneros,
-            payload: genres.data
-        })
-    }
-}
 
-// export function getPlatforms(){
-//     return async function(dispatch){
-//         let platforms = await axios.get('http://localhost:3001/api/platforms')
-//         return dispatch({
-//             type: obtenerPlataformas,
-//             payload: platforms.data
-//         })
-//     }
-// }
 
 export function buscarPorGenero(name){
     return async function(dispatch){
@@ -119,3 +101,4 @@ export function submitPost(datos){
         }
     }
 }
+

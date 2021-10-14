@@ -14,7 +14,7 @@ function Details({videogame}){
                         <h1 className={s.detailTitle}>{e.name}</h1>     
                         <p className={s.detailRating}>Rating: {e.rating}</p>
                         <p>Released Date {e.released}</p>
-                        <p className={s.detailGenres}> {e.genres.map(e=><span className={s.span}><strong>{e.name}</strong></span>)}</p>
+                        <p className={s.detailGenres}> {e.genres.map((e,i)=><span key={i}className={s.span}><strong>{e.name}</strong></span>)}</p>
                         <p className={s.detailDescription}>{e.description}</p>                  
                     </div>
                     <div>

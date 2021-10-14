@@ -32,5 +32,7 @@ router.get('/', async (req, res) => {
         res.send(e)
     }
     })
-    
-    module.exports = router
+
+
+
+    module.exports = router;

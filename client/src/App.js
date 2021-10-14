@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Card from './components/Card/card';
+import Card from './components/Card/card'; 
 import Nav from './components/Nav/nav';
 import LandingPage from './components/LandingPage/LandingPage';
 import Detail from './components/Details/details';
@@ -25,7 +25,7 @@ function App() {
         <Route exact path= '/app/home'>
           <Nav />
           <Home />
-          <Card />
+          <Card /> 
         </Route>
 
         <Route exact path='/app/create'>

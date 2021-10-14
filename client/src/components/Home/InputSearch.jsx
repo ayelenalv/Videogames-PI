@@ -17,8 +17,11 @@ export default function InputSearch(){
 
     function buscar(){
         setState(miRef.current.value)
-        
+        if(miRef.current.value === ''){
+            dispatch(searchByName(''))
+        }
     }
+
 
     return (
         <div className={s.searchBox}>
